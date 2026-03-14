@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 });
 
 // ────────────────────────────────────────────────
-// API FETCH
+// API FETCH... with error handling
 // ────────────────────────────────────────────────
 async function fetchJSON(url) {
   const res = await fetch(url);
