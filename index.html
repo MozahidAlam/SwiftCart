@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SwiftCart – Best Collection For You</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+  NAVBAR — logo LEFT | menu CENTER | cart RIGHT
+══════════════════════════════════════════════ -->
+<nav id="navbar">
+  <a class="nav-logo" href="#">SwiftCart</a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#hero" class="active">Home</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#features">About</a></li>
+    <li><a href="#newsletter">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button id="cart-btn" onclick="openCart()" title="View Cart">
+      <i class="fa fa-cart-shopping"></i>
+      <span id="cart-count">0</span>
+    </button>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════
+  HERO — background image + CENTERED content
+══════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <h1>Best Collection For You</h1>
+    <p>Discover the latest trends in fashion, electronics, and more.<br>Shop with confidence and style at SwiftCart.</p>
+    <!-- CENTERED Shop Now button -->
+    <a href="#products" class="btn-primary">Shop Now</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+  FEATURES / WHY CHOOSE US
+══════════════════════════════════════════════ -->
+<section id="features">
+  <h2 class="section-title">Why Choose Us</h2>
+  <p class="section-sub">We provide the best shopping experience with top-notch services.</p>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fa fa-truck-fast"></i></div>
+      <h3>Fast Delivery</h3>
+      <p>Get your orders delivered to your doorstep quickly and efficiently.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fa fa-headset"></i></div>
+      <h3>24/7 Support</h3>
+      <p>Our support team is available around the clock to assist you.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fa fa-lock"></i></div>
+      <h3>Secure Payment</h3>
+      <p>Experience safe and secure transactions with encrypted payment systems.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fa fa-rotate-left"></i></div>
+      <h3>Easy Returns</h3>
+      <p>Not satisfied? Return your products easily within 30 days.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+  TRENDING / TOP RATED — 3 products sorted by rating
+══════════════════════════════════════════════ -->
+<section id="trending">
+  <div class="trending-header">
+    <h2>Trending Now</h2>
+  </div>
+  <div class="top-grid" id="top-grid">
+    <div class="spinner-wrap"><div class="spinner"></div></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+  ALL PRODUCTS — dynamic categories + 4-col grid
+══════════════════════════════════════════════ -->
+<section id="products">
+  <div class="products-header">
+    <h2 class="section-title">Our Products</h2>
+  </div>
+  <!-- DYNAMIC CATEGORY BUTTONS — active state highlighted -->
+  <div class="categories-bar" id="categories-bar">
+    <button class="cat-btn active" data-cat="all" onclick="filterCategory('all', this)">All</button>
+  </div>
+  <div class="products-grid" id="products-grid">
+    <div class="spinner-wrap"><div class="spinner"></div></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+  NEWSLETTER SECTION (separate, before footer)
+══════════════════════════════════════════════ -->
+<section id="newsletter">
+  <div class="newsletter-inner">
+    <h2>Subscribe to Our Newsletter</h2>
+    <p>Get the latest deals, new arrivals and exclusive offers delivered straight to your inbox.</p>
+    <div class="nl-form">
+      <input type="email" id="email-input" placeholder="Enter your email address…"/>
+      <button onclick="subscribe()">Subscribe</button>
+    </div>
+    <p id="sub-msg">🎉 Thanks for subscribing!</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+  FOOTER — copyright + social links + quick links
+══════════════════════════════════════════════ -->
+<footer id="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="footer-logo">SwiftCart</span>
+      <p>Your one-stop shop for all your fashion and lifestyle needs. Quality products, fast delivery, and excellent support.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Email"><i class="fa fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#hero">Home</a>
+      <a href="#products">Products</a>
+      <a href="#features">About</a>
+      <a href="#newsletter">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="#">FAQ</a>
+      <a href="#">Shipping Info</a>
+      <a href="#">Returns Policy</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 SwiftCart, Inc. All rights reserved.</p>
+    <div class="social-links" style="margin-top:0">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fa fa-envelope"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════
+  MODAL — full product details + Buy Now + Add to Cart
+══════════════════════════════════════════════ -->
+<div id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-box">
+    <div class="modal-img"><img id="modal-img" src="" alt="Product Image"/></div>
+    <div class="modal-info">
+      <span class="modal-cat-badge" id="modal-cat"></span>
+      <h2 class="modal-title" id="modal-title"></h2>
+      <p class="modal-price" id="modal-price"></p>
+      <div class="modal-rating" id="modal-rating"></div>
+      <p class="modal-desc" id="modal-desc"></p>
+      <div class="modal-actions">
+        <button class="btn-modal-buynow" id="modal-buynow-btn">Buy Now</button>
+        <button class="btn-modal-cart" id="modal-cart-btn">Add to Cart</button>
+        <button class="btn-modal-close" onclick="closeModalDirect()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+  CART SIDEBAR — item list + qty + remove + total
+══════════════════════════════════════════════ -->
+<div id="cart-overlay" onclick="closeCart()"></div>
+<div id="cart-sidebar">
+  <div class="cart-header">
+    <h2><i class="fa fa-cart-shopping" style="color:#4f46e5;margin-right:.4rem"></i>Your Cart</h2>
+    <button class="cart-close" onclick="closeCart()"><i class="fa fa-xmark"></i></button>
+  </div>
+  <div class="cart-items" id="cart-items-list"></div>
+  <div class="cart-footer" id="cart-footer" style="display:none">
+    <div class="cart-total">
+      <span>Total</span>
+      <span class="total-amount" id="cart-total">$0.00</span>
+    </div>
+    <button class="btn-checkout">Proceed to Checkout</button>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
