@@ -2,7 +2,7 @@
 html { scroll-behavior: smooth; }
 body { font-family: 'Inter', sans-serif; color: #1a1a1a; background: #fff; overflow-x: hidden; }
 
-/* ── NAVBAR ── */
+/* ── NAVBAR ── css*/
 nav {
   position: sticky; top: 0; z-index: 999;
   background: #fff; border-bottom: 1px solid #e5e7eb;
